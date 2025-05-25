@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DriveSync Plus - Partner With Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            object-fit: contain;
+        }
+
+        nav {
+            background-color: #305CDE;
+            padding: 10px;
+            text-align: center;
+        }
+
+            nav a {
+                color: white;
+                margin: 0 15px;
+                text-decoration: none;
+                font-size: 18px;
+            }
+
+        .dpp-container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+            .dpp-container h2 {
+                color: #305CDE;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .dpp-container p {
+                font-size: 16px;
+                line-height: 1.6;
+                text-align: center;
+            }
+
+        .benefits {
+            margin-top: 20px;
+        }
+
+            .benefits ul {
+                list-style-type: disc;
+                padding-left: 20px;
+            }
+
+        .signup-form {
+            margin-top: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        #submit-partner {
+            margin-top: 10px;
+            background-color: #305CDE;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+            #submit-partner:hover {
+                background-color: #244bbb;
+            }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 15px 20px;
+            font-size: 14px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://i.postimg.cc/QM1Mw2kv/489459935-29050188491291157-4404317252772084876-n-1.png" alt="DriveSync Logo">
+        </div>
+    </header>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="PrivPol.html">Privacy Policy</a>
+    </nav>
+
+    <div class="dpp-container">
+        <h2>Join DriveSync Plus (DPP)</h2>
+        <p>Are you a local auto repair shop? Partner with us for only <strong>₱3,500/month</strong> and receive referrals from DriveSync for severe vehicle issues that need workshop attention.</p>
+
+        <div class="benefits">
+            <h3>Benefits of Joining:</h3>
+            <ul>
+                <li>Monthly referrals from DriveSync's mobile service network</li>
+                <li>More customers without extra advertising costs</li>
+                <li>Be part of a growing mechanic cooperative</li>
+                <li>Priority listing based on proximity to customer</li>
+            </ul>
+        </div>
+
+        <div class="signup-form">
+            <h3>Partner Signup Form</h3>
+            <form id="partner-form">
+                <div class="form-group">
+                    <label for="shop-name">Shop Name:</label>
+                    <input type="text" id="shop-name" name="shop-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="owner-name">Owner's Name:</label>
+                    <input type="text" id="owner-name" name="owner-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="shop-address">Shop Address:</label>
+                    <textarea id="shop-address" name="shop-address" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="contact-number">Phone Number:</label>
+                    <input type="text" id="contact-number" name="contact-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <button type="submit" id="submit-partner">Become a Partner</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 DriveSync. All rights reserved.</p>
+        <p>📍 CTC Building, 2232 Roxas Boulevard, Barangay 13, Zone 4, Pasay City, Metro Manila</p>
+        <p>📞 09954172622 | 📧 contact.drivesync@gmail.com</p>
+    </footer>
+
+    <script>
+    document.getElementById("partner-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+        alert("Thank you for applying! Our team will contact you shortly to complete your DriveSync Plus partnership.");
+        this.reset(); // optional: clears form after submission
+    });
+    </script>
+
+</body>
+</html>

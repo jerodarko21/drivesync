@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DriveSync services - Professional car and motorcycle maintenance and repair">
+    <title>Our Services - DriveSync</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" crossorigin href="/assets/services-BF0nKL2T.css">
+  <link rel="stylesheet" crossorigin href="/assets/main-ja2N-NXq.css">
+</head>
+<body>
+    <header>
+        <!-- Header content same as home.html -->
+    </header>
+
+    <main class="services-container">
+        <section class="vehicle-selector">
+            <h2>Select Your Vehicle Type</h2>
+            <div class="vehicle-buttons">
+                <button class="btn btn-vehicle" data-vehicle="car">Car</button>
+                <button class="btn btn-vehicle" data-vehicle="motorcycle">Motorcycle</button>
+                <button class="btn btn-vehicle" data-vehicle="both">Both</button>
+            </div>
+        </section>
+
+        <section id="carServices" class="service-section" hidden>
+            <h2>Car Services</h2>
+            <div class="services-grid">
+                <!-- Car services will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <section id="motorcycleServices" class="service-section" hidden>
+            <h2>Motorcycle Services</h2>
+            <div class="services-grid">
+                <!-- Motorcycle services will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <section class="cart-summary">
+            <div class="cart-total">
+                <h3>Total: <span id="cartTotal">₱0</span></h3>
+                <button id="viewCart" class="btn btn-primary">View Cart</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer content same as home.html -->
+    </footer>
+
+    <div id="serviceModal" class="modal" hidden>
+        <div class="modal-content">
+            <h3>Service Added!</h3>
+            <p>Service has been added to your cart.</p>
+            <button class="btn btn-secondary" onclick="closeModal()">Continue Shopping</button>
+            <button class="btn btn-primary" onclick="goToCart()">Go to Cart</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/services.js"></script>
+</body>
+</html>
