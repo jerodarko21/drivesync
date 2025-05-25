@@ -1,247 +1,112 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DriveSync</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
-
-        header {
-            background-color: #222;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 70px;
-            object-fit: contain;
-        }
-
-        .contact {
-            display: flex;
-            align-items: center;
-        }
-
-        .partner-button {
-            padding: 10px 20px;
-            background-color: #305CDE;
-            color: white;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-            .partner-button:hover {
-                background-color: #244bbb;
-            }
-
-        nav {
-            background-color: #305CDE;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-            nav a {
-                color: white;
-                text-decoration: none;
-                margin: 0 15px;
-                font-size: 18px;
-            }
-
-                nav a:hover {
-                    color: #ffdd57;
-                }
-
-        .hero {
-            background-image: url('https://img.freepik.com/premium-photo/man-repairing-motorcycle-repair-shop-mechanic-fixing-motorbike-workshop-garage-repairing-maintenance-concepts_29315-778.jpg?w=996');
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        }
-
-            .hero div {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-                background-color: rgba(0, 0, 0, 0.4);
-                padding: 20px;
-                border-radius: 10px;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .hero p {
-                font-size: 24px;
-            }
-
-        .book-now-button {
-            padding: 10px 20px;
-            background-color: #305CDE;
-            color: white;
-            font-size: 18px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-            .book-now-button:hover {
-                background-color: #244bbb;
-            }
-
-        section {
-            padding: 40px;
-            text-align: center;
-        }
-
-            section h2 {
-                margin-bottom: 30px;
-                color: #00008B;
-            }
-
-        footer {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .map-container {
-            width: 80%;
-            height: 300px;
-            margin: 30px auto;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #e0e0e0; /* Grey background added here */
-        }
-
-            .map-container img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #e0e0e0; /* Grey background for form */
-            padding: 20px;
-            border-radius: 8px;
-        }
-
-            .contact-form input, .contact-form textarea {
-                width: 80%;
-                padding: 12px;
-                margin: 10px 0;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                box-sizing: border-box;
-                font-size: 16px;
-                resize: none; /* Prevent resize */
-            }
-
-            .contact-form textarea {
-                height: 150px;
-                overflow: auto; /* Enable scrolling */
-            }
-
-            .contact-form button {
-                padding: 12px 24px;
-                background-color: #305CDE;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                font-size: 16px;
-                cursor: pointer;
-                margin-top: 10px; /* Added margin to space it below the textarea */
-                width: 80%; /* Match width with the other inputs */
-            }
-
-                .contact-form button:hover {
-                    background-color: #244bbb;
-                }
-
-        .contact-section {
-            background-color: #f4f4f4; /* Ensure the background is light for the section */
-            padding: 40px 0;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DriveSync - Your trusted partner for mobile vehicle maintenance and repair services">
+    <title>DriveSync - Mobile Vehicle Maintenance & Repair</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 </head>
 <body>
-
     <header>
         <div class="logo">
-            <img src="https://i.postimg.cc/QM1Mw2kv/489459935-29050188491291157-4404317252772084876-n-1.png" alt="Company Logo" />
+            <img src="https://i.postimg.cc/QM1Mw2kv/489459935-29050188491291157-4404317252772084876-n-1.png" alt="DriveSync Logo" width="140" height="70">
         </div>
-        <div class="contact">
-            <a href="DPP.html">
-                <button class="partner-button">Become a Partner Now</button>
-            </a>
-        </div>
+        <nav class="desktop-nav">
+            <a href="services.html">Services</a>
+            <a href="about.html">About Us</a>
+            <a href="#contact">Contact</a>
+            <a href="PrivPol.html">Privacy Policy</a>
+            <a href="DPP.html" class="btn btn-primary">Become a Partner</a>
+        </nav>
+        <button id="menu-toggle" class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+        </button>
     </header>
 
-    <nav>
+    <nav id="mobile-menu" class="mobile-nav">
         <a href="services.html">Services</a>
         <a href="about.html">About Us</a>
         <a href="#contact">Contact</a>
         <a href="PrivPol.html">Privacy Policy</a>
+        <a href="DPP.html" class="btn btn-primary">Become a Partner</a>
     </nav>
 
-    <section class="hero">
-        <div>
-            <h1>Reliable Auto Repair Services</h1>
-            <p>Fast, affordable, and professional service you can count on</p>
-            <a href="services.html" class="book-now-button">Book Now</a>
-        </div>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Professional Vehicle Maintenance & Repair</h1>
+                <p>Expert service at your doorstep</p>
+                <a href="services.html" class="btn btn-primary">Book Now</a>
+            </div>
+        </section>
 
-    <section id="contact" class="contact-section">
-        <h2>Contact Us</h2>
-        <p>Get in touch with us for your car service needs or inquiries!</p>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+        <section id="features" class="features">
+            <h2>Why Choose DriveSync?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="https://images.pexels.com/photos/3807386/pexels-photo-3807386.jpeg" alt="Mobile Service" width="300" height="200">
+                    <h3>Mobile Service</h3>
+                    <p>We come to you - save time and hassle</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://images.pexels.com/photos/3862632/pexels-photo-3862632.jpeg" alt="Expert Mechanics" width="300" height="200">
+                    <h3>Expert Mechanics</h3>
+                    <p>Certified professionals you can trust</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://images.pexels.com/photos/3943882/pexels-photo-3943882.jpeg" alt="Fair Pricing" width="300" height="200">
+                    <h3>Fair Pricing</h3>
+                    <p>Transparent pricing with no hidden fees</p>
+                </div>
+            </div>
+        </section>
 
-        <div class="map-container">
-            <img src="https://i.postimg.cc/bvDnJV0R/map.png" alt="Location of DriveSync">
-        </div>
-    </section>
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <h3>Visit Us</h3>
+                    <p>📍 CTC Building, 2232 Roxas Boulevard</p>
+                    <p>Barangay 13, Zone 4, Pasay City</p>
+                    <p>Metro Manila</p>
+                    <h3>Get in Touch</h3>
+                    <p>📞 09954172622</p>
+                    <p>📧 contact.drivesync@gmail.com</p>
+                    <p>🕒 9:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2025 DriveSync Car Service. All rights reserved.</p>
-        <p>📍 CTC Building, 2232 Roxas Boulevard, Barangay 13, Zone 4, Pasay City, Metro Manila</p>
-        <p>📞 09954172622 | 📧 contact.drivesync@gmail.com</p>
-        <p>🕒 Booking Hours: 9:00 AM - 5:00 PM</p>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="home.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="PrivPol.html">Privacy Policy</a>
+            </div>
+            <p>&copy; 2025 DriveSync. All rights reserved.</p>
+        </div>
     </footer>
 
+    <script src="js/main.js"></script>
 </body>
 </html>
