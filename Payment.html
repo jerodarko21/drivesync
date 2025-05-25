@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 70px;
+            object-fit: contain;
+        }
+
+        .partner-button-container {
+            margin-left: auto;
+        }
+
+        .partner-button {
+            padding: 10px 20px;
+            background-color: #305CDE;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+            .partner-button:hover {
+                background-color: #244bbb;
+            }
+
+        nav {
+            background-color: #305CDE;
+            padding: 10px;
+            text-align: center;
+        }
+
+            nav a {
+                color: white;
+                margin: 0 10px;
+                text-decoration: none;
+                font-size: 18px;
+            }
+
+        .payment-container {
+            padding: 20px;
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .card-details {
+            display: none;
+        }
+
+        #confirm-booking {
+            background-color: #28a745;
+            border: none;
+            padding: 15px 30px;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+            #confirm-booking:hover {
+                background-color: #218838;
+            }
+
+        #back-button {
+            background-color: #007bff;
+            border: none;
+            padding: 15px 30px;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+            #back-button:hover {
+                background-color: #0056b3;
+            }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://i.postimg.cc/QM1Mw2kv/489459935-29050188491291157-4404317252772084876-n-1.png" alt="Company Logo" />
+        </div>
+        <div class="partner-button-container">
+            <a href="DPP.html">
+                <button class="partner-button">Become a Partner Now</button>
+            </a>
+        </div>
+    </header>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="PrivPol.html">Privacy Policy</a>
+    </nav>
+
+    <div class="payment-container">
+        <h2>Payment Method</h2>
+        <form id="payment-form">
+            <div class="form-group">
+                <label for="payment-method">Select Payment Method:</label>
+                <select id="payment-method" name="payment-method">
+                    <option value="">--Choose Payment Method--</option>
+                    <option value="cash">Cash on Hand</option>
+                    <option value="card">Debit/Credit Card</option>
+                </select>
+            </div>
+
+            <div id="card-details" class="card-details">
+                <div class="form-group">
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" id="card-number" name="card-number" placeholder="Enter Card Number" />
+                </div>
+                <div class="form-group">
+                    <label for="card-expiry">Expiration Date:</label>
+                    <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/YY" />
+                </div>
+                <div class="form-group">
+                    <label for="card-cvv">CVV:</label>
+                    <input type="password" id="card-cvv" name="card-cvv" placeholder="CVV" />
+                </div>
+
+                <button type="button" id="back-button" onclick="window.location.href='payment.html'">Back to Payment Method</button>
+            </div>
+
+            <div class="form-group">
+                <label for="phone-number">Phone Number:</label>
+                <input type="text" id="phone-number" name="phone-number" placeholder="Enter your phone number" required />
+            </div>
+
+            <button type="submit" id="confirm-booking">Confirm Booking</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to validate the form
+        function validatePayment() {
+            const paymentMethod = document.getElementById('payment-method').value;
+            const cardNumber = document.getElementById('card-number').value;
+            const cardExpiry = document.getElementById('card-expiry').value;
+            const cardCvv = document.getElementById('card-cvv').value;
+            const phoneNumber = document.getElementById('phone-number').value;
+
+            if (paymentMethod === 'card') {
+                if (!cardNumber || !cardExpiry || !cardCvv) {
+                    alert('Please fill in all card details.');
+                    return false; // Prevent form submission
+                }
+            }
+
+            if (!phoneNumber) {
+                alert('Please enter your phone number.');
+                return false;
+            }
+
+            // If all is valid, return true
+            return true;
+        }
+
+        // Listen for form submission and validate before proceeding
+        document.getElementById('payment-form').addEventListener('submit', function (event) {
+            if (!validatePayment()) {
+                event.preventDefault(); // Prevent form submission
+            } else {
+                alert('A mechanic has been notified, they will get in touch with you soon.');
+            }
+        });
+
+        // Show card details section only when card payment method is selected
+        document.getElementById('payment-method').addEventListener('change', function () {
+            const paymentMethod = this.value;
+            const cardDetails = document.getElementById('card-details');
+            const backButton = document.getElementById('back-button');
+
+            if (paymentMethod === 'card') {
+                cardDetails.style.display = 'block';
+                backButton.style.display = 'block'; // Show back button
+            } else {
+                cardDetails.style.display = 'none';
+                backButton.style.display = 'none'; // Hide back button
+            }
+        });
+    </script>
+</body>
+</html>
