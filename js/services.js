@@ -6,21 +6,51 @@ const services = {
       name: "Basic Change Oil",
       time: "1 hr",
       price: 2300,
-      image: "https://www.cbac.com/images/blog/10-Tips-for-a-Successful-Oil-Change.jpg",
+      image: "https://images.pexels.com/photos/8985530/pexels-photo-8985530.jpeg",
       description: "Complete oil change service using high-quality oil"
     },
-    // ... other car services
+    {
+      id: 'c2',
+      name: "Brake System Check",
+      time: "45 mins",
+      price: 1500,
+      image: "https://images.pexels.com/photos/8985608/pexels-photo-8985608.jpeg",
+      description: "Comprehensive brake system inspection and maintenance"
+    },
+    {
+      id: 'c3',
+      name: "Engine Tune-up",
+      time: "2 hrs",
+      price: 3500,
+      image: "https://images.pexels.com/photos/8985619/pexels-photo-8985619.jpeg",
+      description: "Complete engine performance optimization"
+    }
   ],
   motorcycle: [
     {
       id: 'm1',
       name: "Replace Brake Pads",
-      time: "18 mins",
-      price: 500,
-      image: "https://www.supercheapauto.com.au/on/demandware.static/-/Library-Sites-supercheap-shared-library/default/dwe0dc8f6a/blog/how-to-change-motorcycle-brake-pads-2-2.jpg",
+      time: "45 mins",
+      price: 800,
+      image: "https://images.pexels.com/photos/8985544/pexels-photo-8985544.jpeg",
       description: "Professional brake pad replacement service"
     },
-    // ... other motorcycle services
+    {
+      id: 'm2',
+      name: "Chain Maintenance",
+      time: "30 mins",
+      price: 500,
+      image: "https://images.pexels.com/photos/8985548/pexels-photo-8985548.jpeg",
+      description: "Chain cleaning, lubrication and adjustment"
+    },
+    {
+      id: 'm3',
+      name: "Full Service",
+      time: "3 hrs",
+      price: 2500,
+      image: "https://images.pexels.com/photos/8985552/pexels-photo-8985552.jpeg",
+      description: "Complete motorcycle maintenance service"
+    }
   ]
 };
 
@@ -28,6 +58,11 @@ const services = {
 document.addEventListener('DOMContentLoaded', () => {
   initializeVehicleSelection();
   updateCartDisplay();
+  
+  // Add click handler for view cart button
+  document.getElementById('viewCart').addEventListener('click', () => {
+    window.location.href = 'cart.html';
+  });
 });
 
 // Vehicle selection handling
@@ -35,6 +70,11 @@ function initializeVehicleSelection() {
   const buttons = document.querySelectorAll('.btn-vehicle');
   buttons.forEach(button => {
     button.addEventListener('click', (e) => {
+      // Remove active class from all buttons
+      buttons.forEach(btn => btn.classList.remove('active'));
+      // Add active class to clicked button
+      e.target.classList.add('active');
+      
       const vehicleType = e.target.dataset.vehicle;
       showServices(vehicleType);
     });
@@ -46,6 +86,10 @@ function showServices(vehicleType) {
   const carSection = document.getElementById('carServices');
   const motoSection = document.getElementById('motorcycleServices');
   
+  // Hide both sections first
+  carSection.hidden = true;
+  motoSection.hidden = true;
+  
   if (vehicleType === 'car' || vehicleType === 'both') {
     carSection.hidden = false;
     renderServices('car');
@@ -55,8 +99,6 @@ function showServices(vehicleType) {
     motoSection.hidden = false;
     renderServices('motorcycle');
   }
-  
-  document.querySelector('.vehicle-selector').hidden = true;
 }
 
 // Render service cards
@@ -116,7 +158,8 @@ function updateCartDisplay() {
 
 // Modal handling
 function showModal() {
-  document.getElementById('serviceModal').hidden = false;
+  const modal = document.getElementById('serviceModal');
+  modal.hidden = false;
 }
 
 function closeModal() {
